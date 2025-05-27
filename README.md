@@ -27,7 +27,7 @@ The following instructions will allow the user to change the default physical bu
 > Starting from KOReader version **2025.04**, the button names above were changed to the following:
 > ```[-C.IV_KEY_HOME] = "Home",
 >           [-C.IV_KEY_MENU] = "Menu",
->           [-C.IV_KEY_PREV] = "LPgFwd",
+>           [-C.IV_KEY_PREV] = "LPgBack",
 >           [-C.IV_KEY_NEXT] = "LPgFwd",
 >           [-C.IV_KEY_UP] = "Up",
 >           [-C.IV_KEY_DOWN] = "Down",
