@@ -22,6 +22,19 @@ The following instructions will allow the user to change the default physical bu
             [C.KEY_OK] = "Press",
         }, {__index=raw_input and raw_input.keymap or {}}),
 5. Change `[C.KEY_PREV] = "LPgBack"` to `[C.KEY_PREV] = "LPgFwd"`.
+
+> [!IMPORTANT]
+> Starting from KOReader version **2025.04**, the button names above were changed to the following:
+> ```[-C.IV_KEY_HOME] = "Home",
+>           [-C.IV_KEY_MENU] = "Menu",
+>           [-C.IV_KEY_PREV] = "LPgFwd",
+>           [-C.IV_KEY_NEXT] = "LPgFwd",
+>           [-C.IV_KEY_UP] = "Up",
+>           [-C.IV_KEY_DOWN] = "Down",
+>           [-C.IV_KEY_LEFT] = "Left",
+>           [-C.IV_KEY_RIGHT] = "Right",
+>           [-C.IV_KEY_OK] = "Press",
+
 6. Scroll down and find the following text block:
    ```-- PocketBook InkPad 3 Pro (740_2)
     local PocketBook740_2 = PocketBook:extend{
@@ -36,6 +49,6 @@ The following instructions will allow the user to change the default physical bu
             [115] = "Menu",
             [109] = "LPgFwd",
             [104] = "LPgBack",         
-7. Change `[104] = "LPgBack"` to `[104] = "LPgFwd"`.
-8. Save the changes and close the file.
-9. Safely eject the device from the PC and relaunch KOReader; the new configuration should not require a device reboot.
+8. Change `[104] = "LPgBack"` to `[104] = "LPgFwd"`.
+9. Save the changes and close the file.
+10. Safely eject the device from the PC and relaunch KOReader; the new configuration should not require a device reboot.
