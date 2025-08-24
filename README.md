@@ -6,35 +6,35 @@ The following instructions will allow the user to change the default physical bu
 1. Connect the ereader to a PC and choose `PC Link` in the prompt on the device.
 2. On the PC, navigate to the following path: `applications\koreader\frontend\device\pocketbook\`.
 3. Open the file `device.lua` in a text editor.
-4. Find the following text block:
+4. Find the following text block (for KOReader version **2025.04** and newer):
    ```self.input = require("device/input"):new{
         device = self,
         raw_input = raw_input,
         event_map = setmetatable({
-            [C.KEY_HOME] = "Home",
-            [C.KEY_MENU] = "Menu",
-            [C.KEY_PREV] = "LPgBack",
-            [C.KEY_NEXT] = "LPgFwd",
-            [C.KEY_UP] = "Up",
-            [C.KEY_DOWN] = "Down",
-            [C.KEY_LEFT] = "Left",
-            [C.KEY_RIGHT] = "Right",
-            [C.KEY_OK] = "Press",
+            [-C.IV_KEY_HOME] = "Home",
+            [-C.IV_KEY_MENU] = "Menu",
+            [-C.IV_KEY_PREV] = "LPgBack",
+            [-C.IV_KEY_NEXT] = "LPgFwd",
+            [-C.IV_KEY_UP] = "Up",
+            [-C.IV_KEY_DOWN] = "Down",
+            [-C.IV_KEY_LEFT] = "Left",
+            [-C.IV_KEY_RIGHT] = "Right",
+            [-C.IV_KEY_OK] = "Press",
         }, {__index=raw_input and raw_input.keymap or {}}),
 5. Change `[C.KEY_PREV] = "LPgBack"` to `[C.KEY_PREV] = "LPgFwd"`.
 
 > [!IMPORTANT]
-> Starting from KOReader version **2025.04**, the button names above were changed to the following:
-> ```[-C.IV_KEY_HOME] = "Home",
->           [-C.IV_KEY_MENU] = "Menu",
->           [-C.IV_KEY_PREV] = "LPgBack",
->           [-C.IV_KEY_NEXT] = "LPgFwd",
->           [-C.IV_KEY_UP] = "Up",
->           [-C.IV_KEY_DOWN] = "Down",
->           [-C.IV_KEY_LEFT] = "Left",
->           [-C.IV_KEY_RIGHT] = "Right",
->           [-C.IV_KEY_OK] = "Press",
-
+> If your version of KOReader is **2024.11** or older, the button names above are the following:
+> ```       [C.KEY_HOME] = "Home",
+>           [C.KEY_MENU] = "Menu",
+>           [C.KEY_PREV] = "LPgBack",
+>           [C.KEY_NEXT] = "LPgFwd",
+>           [C.KEY_UP] = "Up",
+>           [C.KEY_DOWN] = "Down",
+>           [C.KEY_LEFT] = "Left",
+>           [C.KEY_RIGHT] = "Right",
+>           [C.KEY_OK] = "Press",
+ 
 6. Scroll down and find the following text block:
    ```-- PocketBook InkPad 3 Pro (740_2)
     local PocketBook740_2 = PocketBook:extend{
